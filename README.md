@@ -4,11 +4,14 @@
 
 Currently kubernetes run in GCP (grid project). URL: http://34.102.201.195/
 
-![[Pasted image 20260402134735.png]]
+<img width="2252" height="1250" alt="image" src="https://github.com/user-attachments/assets/8d22e520-eef8-4e92-bb5b-0c186f1e78e7" />
 
-![[Pasted image 20260402134746.png]]
 
-![[Pasted image 20260402134803.png]]
+<img width="2007" height="1201" alt="image" src="https://github.com/user-attachments/assets/55c1746c-bc39-4665-81db-afc326fbea35" />
+
+
+<img width="1913" height="1274" alt="image" src="https://github.com/user-attachments/assets/c021ff2c-89e1-413b-8775-682331bd4fee" />
+
 
 
 # Implementation
@@ -19,24 +22,30 @@ First I decided to start only with 1 microservice. Later I will add other ones
    
    Docker file for emailservice
    
-   ![[Pasted image 20260401183740.png]]
+<img width="1204" height="878" alt="image" src="https://github.com/user-attachments/assets/42a62d82-34df-4927-8e0a-dca184fb1be0" />
+
 
 Successfully build and run
 
-![[Pasted image 20260401183818.png]]
+<img width="1530" height="1042" alt="image" src="https://github.com/user-attachments/assets/b3223f04-4137-404e-bf06-bf11b6428136" />
+
 
 2)  Use docker scanning tools to check whether created Dockerfiles follow best practices. Also scan the container image itself. Some examples of tools that can be used: Trivy, Checkov, Docker Scout.
 
 Changed docker file to make it pass this check
-![[Pasted image 20260401191852.png]]
+
+<img width="1147" height="995" alt="image" src="https://github.com/user-attachments/assets/7a86a288-ffe7-43ca-ac99-f08cd841f35c" />
+
 
 And all checks passed in Checkov
-![[Pasted image 20260401191836.png]]
+<img width="1658" height="349" alt="image" src="https://github.com/user-attachments/assets/d5357777-dc18-4e11-9047-27d7bb3d7a73" />
+
 
 
 3) Push the container images to the cloud managed container registry.
 
-![[Pasted image 20260402054852.png]]
+<img width="1976" height="824" alt="image" src="https://github.com/user-attachments/assets/c998eaa5-8b86-4502-8359-30411be59713" />
+
 
 
 4. Deploy cloud managed kubernetes cluster and all required infrastructure like network. There are no specific requirements for the configuration of network, IAM, kubernetes cluster, etc. Resources can be created both via CLI, Terraform, Web Console, etc.
@@ -173,15 +182,19 @@ Now I adding other 2 services to kubernetes, `cartservice` and 'frontend'
 
 Cartservice `dockerfile`:
 
-![[Pasted image 20260402102545.png]]
+<img width="1453" height="687" alt="image" src="https://github.com/user-attachments/assets/7435e1a4-f555-4457-ac42-a5ef5834ae2b" />
 
-![[Pasted image 20260402102609.png]]
+
+<img width="1594" height="397" alt="image" src="https://github.com/user-attachments/assets/f1ebaad7-3e50-4700-8874-704e53eead83" />
+
 
 For `frontend` service.
 
-![[Pasted image 20260402114102.png]]
+<img width="1208" height="882" alt="image" src="https://github.com/user-attachments/assets/5d3d9ace-38b8-4c07-8000-b047e38b126f" />
 
-![[Pasted image 20260402114115.png]]
+
+<img width="1834" height="456" alt="image" src="https://github.com/user-attachments/assets/eaa6971b-1aa4-48d0-95e7-770b04578630" />
+
 
 And created manifests for these services:
 FRONTEND:
@@ -372,7 +385,8 @@ horizontalpodautoscaler.autoscaling/frontend-hpa       Deployment/frontend      
 12:39:18 ybryshten@noc-Latitude-5440 ~/github/microservices-demo/src/frontend  $ 
 ```
 
-![[Pasted image 20260402124052.png]]
+<img width="956" height="1309" alt="image" src="https://github.com/user-attachments/assets/cc8f70b8-6114-4f0e-b8de-cfd1c1b8d2a7" />
+
 
 
 Added other services needed for demo:
